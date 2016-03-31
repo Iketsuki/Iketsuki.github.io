@@ -2465,7 +2465,6 @@
 	#header {
 		background-color: #1f1815;
 		background-attachment: scroll,								fixed;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;
@@ -2931,7 +2930,6 @@
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
@@ -3106,3 +3104,27 @@
 			}
 
 	}
+		/*BGM
+-------------------------*/
+#bgm {
+	width: 160px;
+	height: 80px;
+	position: absolute;
+	top: -100px;
+	right: -100px;
+}
+#bgm .jp-play {
+	display: block;
+	background: url(../img/bgm_off.png) no-repeat;
+	width: 160px;
+	height: 80px;
+	text-indent: -9999px;
+}
+#bgm .jp-pause {
+	display: block;
+	background: url(../img/bgm_on.png) no-repeat;
+	width: 160px;
+	height: 80px;
+	text-indent: -9999px;
+}
+/*フッター
