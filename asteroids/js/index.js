@@ -416,3 +416,4 @@
  
   var audio = new Audio('music/Bgm01.mp3');
   audio.play();
+  loop="loop"
