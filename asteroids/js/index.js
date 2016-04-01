@@ -274,8 +274,6 @@
         }
         if (this.collision(this.player.m.pos, this.asteroids[i].pos)) {
           this.killPlayer();
-          var snd2 = new Audio("music/se03.wav"); // buffers automatically when created
-          snd2.play();
         }
         if (this.asteroids[i].pos.health < 0) {
           this.explosion(this.asteroids[i].pos.x, this.asteroids[i].pos.y, 25, 8);
@@ -306,6 +304,8 @@
 
     AsteroidsView.prototype.killPlayer = function() {
       if (this.invincible === false || this.invincible === void 0) {
+        var snd2 = new Audio("music/se03.wav"); // buffers automatically when created
+        snd2.play();
         this.explosion(this.player.m.pos.x, this.player.m.pos.y, 50, 4);
         this.player.m.pos.x = 0;
         this.player.m.pos.y = 0;
