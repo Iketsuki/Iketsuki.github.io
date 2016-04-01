@@ -97,3 +97,7 @@ h3 a {color: #5a5816}
 
 .info .key.left {background-position: -92px -621px;}
 .info .key.right {background-position: -92px -641px;}
+ul
+{
+    list-style-type: none;
+}
