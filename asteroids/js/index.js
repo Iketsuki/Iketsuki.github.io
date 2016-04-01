@@ -273,9 +273,9 @@
           n++;
         }
         if (this.collision(this.player.m.pos, this.asteroids[i].pos)) {
+          this.killPlayer();
           var snd2 = new Audio("music/se03.wav"); // buffers automatically when created
           snd2.play();
-          this.killPlayer();
         }
         if (this.asteroids[i].pos.health < 0) {
           this.explosion(this.asteroids[i].pos.x, this.asteroids[i].pos.y, 25, 8);
