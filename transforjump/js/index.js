@@ -447,6 +447,8 @@ function init() {
 		else if(player.y + player.height > height) {
 			showGoMenu();
 			hideScore();
+			var se01 = new Audio("music/se01.mp3"); // buffers automatically when created
+        	se01.play();
 			player.isDead = "lol";
 
 			var tweet = document.getElementById("tweetBtn");
@@ -494,7 +496,8 @@ function reset() {
 	flag = 0;
 	position = 0;
 	score = 0;
-
+	var se02 = new Audio("music/se02.mp3"); // buffers automatically when created
+    se02.play();
 	base = new Base();
 	player = new Player();
 	Spring = new spring();
