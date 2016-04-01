@@ -414,6 +414,10 @@
 }).call(this);
 
  
-  var audio = new Audio('music/Bgm01.mp3');
-  audio.play();
-  loop="loop"
+  var bgm = new Audio('music/Bgm01.mp3');
+  bgm.play();
+  bgm.loop=true;
+  bgm.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
