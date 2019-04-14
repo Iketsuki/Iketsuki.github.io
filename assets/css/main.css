@@ -3104,11 +3104,12 @@
 			}
 
 	}
-			<audio src="http://www.honeybee-cd.com/un_birth/common/bgm/bgm1.mp3" controls>
+			<audio src="Music/Bgm02.mp3" controls>
 			<p>If you are reading this, it is because your browser does not support the audio element.</p>
 			</audio>
-			<embed name="GoodEnough" src="http://www.honeybee-cd.com/un_birth/common/bgm/bgm1.mp3" loop="false" hidden="true" autostart="true">
-			/*BGM
+			<embed name="GoodEnough" src="Music/Bgm02.mp3" loop="false" hidden="true" autostart="true">
+			/*BGM html <audio src="Music/Bgm02.mp3" autoplay="autoplay" loop="true">
+			<embed src="Music/Bgm02.mp3" autostart="true" loop="true" hidden="true" />
 -------------------------*/
 #bgm {
 	width: 160px;
