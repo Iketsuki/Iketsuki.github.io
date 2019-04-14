@@ -3,6 +3,22 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+menuLoop = function() {
+	update();
+	requestAnimFrame(menuLoop);
+};
+
+menuLoop();
+
+  var bgm = new Audio('Music/Bgm02.mp3');
+  bgm.play();
+  bgm.loop=true;
+  bgm.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+
+
 
 (function($) {
 
