@@ -9,13 +9,13 @@ m = n.getMonth() + 1;
 d = n.getDate();
 document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
 
-  var bgm = new Audio('Music/Bgm02.mp3');
+  /*var bgm = new Audio('Music/Bgm02.mp3');
   bgm.play();
   bgm.loop=true;
   bgm.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
-  }, false);
+  }, false);*/
 
 
 
