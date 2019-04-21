@@ -451,9 +451,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</footer>
 			
 			<!-- Scripts -->
-			<audio src="Music/Bgm02.mp3" autoplay="autoplay" loop="true">
+			<audio id="audioplayer" autobuffer="" loop="true" preload="auto" src="Music/Bgm02.mp3">
+			</audio>
+    <!-- you must include JS after the player; otherwise you will get undifiend object-->
+			<script src="audio.js"></script>
+			<!--<audio src="Music/Bgm02.mp3" autoplay="autoplay" loop="true">
 			<embed src="Music/Bgm02.mp3" autostart="true" loop="true" hidden="true" />
-			</audio> 
+			</audio>--> 
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
