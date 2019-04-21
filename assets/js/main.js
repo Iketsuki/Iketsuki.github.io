@@ -3,6 +3,12 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+
   var bgm = new Audio('Music/Bgm02.mp3');
   bgm.play();
   bgm.loop=true;
