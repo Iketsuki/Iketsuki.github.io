@@ -5,5 +5,26 @@ https://www.jqueryscript.net/tags.php?/Tag%20Cloud/
 https://www.cssscript.com/demo/animated-sphere-tag-cloud/
 https://shaktisinghcheema.com/interactive-globe-in-background-of-website/
 https://cssanimation.rocks/spheres/
+
+word 3d cloud
+https://codepen.io/Iketsuki/pen/jOWeXRW?editors=1010
+
 glass cracking
 https://codepen.io/Birky/pen/KJFiq
+
+pic zoom 
+
+pic nevigation hover moving
+https://codepen.io/Iketsuki/pen/pogxqxg
+
+menu
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js
+
+click dropdown
+https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+overlapping text on picture
+http://jsfiddle.net/n8k326g6/1/
+
+php file reading
+https://www.w3schools.com/php/php_file.asp
