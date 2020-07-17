@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- figuring out tag cloud from https://www.goat1000.com/tagcanvas.php-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>TagCanvas - an HTML5 Canvas Tag Cloud</title>
+<link rel="stylesheet" type="text/css" charset="utf-8" href="/all.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="verify-v1" content="BBkjRefRXlA3Tf6oGjfzboK8pfgijneuUKOlkodlLuU=" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/news.rss" />
+<link rel="canonical" href="https://www.goat1000.com/tagcanvas.php/tagcanvas-install.php" />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7839831-1']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script data-ad-client="ca-pub-7519606359935719" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bc05e8aabccec00115cc172&product=inline-share-buttons' async='async'></script>
+<script async type='text/javascript' src='/monster.js'></script>
+
+<link type=text/css rel=stylesheet href=/css/foundation.css><style type="text/css">
+<!--
+#cparent {
+ position: relative;
+ width: 0;
+ height: 0;
+}
+#cmsg {
+ position: absolute;
+ top: 20px;
+ left: 10px;
+ width: 160px;
+ padding: 6px;
+ border: 4px solid #aaa;
+ background-color: #eee;
+ text-align: center
+}
+#cmsg:hover { opacity: 0.5 }
+-->
+</style>
+<!--[if lt IE 9]>
+<style type="text/css">
+#cmsg { display: none }
+</style>
+<![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="/excanvas.min.js"></script><![endif]-->
+<script src="/tagcanvas.min.js?2.9" type="text/javascript" async></script>
+<script type="text/javascript">
+//<![CDATA[
+var oopts = {
+ textFont: 'Impact,Arial Black,sans-serif',
+ textHeight: 20,
+ maxSpeed: 0.1,
+ decel: 0.9,
+ depth: 0.99,
+ outlineColour: '#f6f',
+ outlineThickness: 3,
+ pulsateTo: 0.2,
+ pulsateTime: 0.5,
+ wheelZoom: false
+}, ttags = 'taglist', lock, shape = 'sphere';
+window.onload = function() {
+ TagCanvas.textFont = 'Trebuchet MS, Helvetica, sans-serif';
+ TagCanvas.textColour = '#00f';
+ TagCanvas.textHeight = 25;
+ TagCanvas.outlineMethod = 'block';
+ TagCanvas.outlineColour = '#acf';
+ TagCanvas.maxSpeed = 0.03;
+ TagCanvas.minBrightness = 0.2;
+ TagCanvas.depth = 0.92;
+ TagCanvas.pulsateTo = 0.6;
+ TagCanvas.initial = [0.1,-0.1];
+ TagCanvas.decel = 0.98;
+ TagCanvas.reverse = true;
+ TagCanvas.hideTags = false;
+ TagCanvas.shadow = '#ccf';
+ TagCanvas.shadowBlur = 3;
+ TagCanvas.weight = false;
+ TagCanvas.imageScale = null;
+ TagCanvas.fadeIn = 1000;
+ TagCanvas.clickToFront = 600;
+ try {
+  TagCanvas.Start('tagcanvas','taglist');
+  TagCanvas.Start('smallCanvas','moreTags', oopts);
+  f('options');
+ } catch(e) {
+  document.getElementById('cmsg').style.display='none';
+  document.getElementsByTagName('canvas')[0].style.border='0';
+ }
+};
+function BGImage(e) {
+ document.getElementById('tagcanvas').style.backgroundImage = (e.checked ? 'url(/images/canvas_bg1.png)' : 'none');
+}
+function f(a) {
+ TagCanvas.Start('otherCanvas',a,oopts);
+ return false;
+}
+function restart() {
+ TagCanvas.shape = shape;
+ TagCanvas.lock = lock;
+ TagCanvas.Start('tagcanvas',ttags);
+}
+function changetags(t) {
+ ttags = t;
+ restart();
+}
+function changeshape(s) {
+ var locks = { hcylinder: 'x', vcylinder: 'y', hring: 'x', vring: 'y', sphere: '' };
+ lock = locks[s] || '';
+ shape = s;
+ TagCanvas.initial = (lock == 'x' && [0,0.2]) || (lock == 'y' && [0.2,0]) || [0.2,0.2];
+ restart();
+}
+function tpu(s) {
+ document.getElementById('sout').innerHTML = s.innerHTML;
+ return false;
+}
+//]]>
+</script>
+</head>
+<body><div id="logo">
+<a href="/"><img src="/images/logo2013.png" width="321" height="68" alt="Goat 1000"></a>
+</div>
+<!-- google search code -->
+<div id="sitesearch">
+<script>
+(function() {
+  var cx = 'partner-pub-7519606359935719:5543126578';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+</div>
+
+<div id="navigation" title="Menu">
+<div id="navcontents">
+<div id="menu">
+<div><a href="/" title="Goat 1000 home">Goat 1000 home</a></div>
+<div><a href="/oldnews.php" title="Old News">Old News</a></div>
+<div><a href="/jpegsaver.php" title="JPEG Saver">JPEG Saver</a><div class="surround">
+<div><a href="/jpegsaver4.php" title="JPEG Saver 4 and 5">JPEG Saver 4 and 5</a></div>
+<div><a href="/jpegsaver-main.php" title="Main tab options">Main tab options</a></div>
+<div><a href="/jpegsaver-folders.php" title="Folders tab options">Folders tab options</a></div>
+<div><a href="/jpegsaver-position.php" title="Position/Resize tab options">Position/Resize tab options</a></div>
+<div><a href="/jpegsaver-background.php" title="Background tab options">Background tab options</a></div>
+<div><a href="/jpegsaver-styles.php" title="Styles tab options">Styles tab options</a></div>
+<div><a href="/jpegsaver-items.php" title="Items tab options">Items tab options</a></div>
+<div><a href="/jpegsaver-tokens.php" title="Item format tokens">Item format tokens</a></div>
+<div><a href="/jpegsaver-interactive.php" title="Interactive controls">Interactive controls</a></div>
+<div><a href="/jpegsaver-command-line.php" title="Command-line options">Command-line options</a></div>
+<div><a href="/jpegsaver-faq.php" title="Frequently asked questions">Frequently asked questions</a></div>
+</div></div>
+<div><a href="/crcdropper.php" title="CRC Dropper">CRC Dropper</a></div>
+<div><a href="/svggraph.php" title="SVGGraph">SVGGraph</a><div class="surround">
+<div><a href="/svggraph-using.php" title="Using SVGGraph">Using SVGGraph</a></div>
+<div><a href="/svggraph-functions.php" title="Function reference">Function reference</a></div>
+<div><a href="/svggraph-colours.php" title="Colours, gradients and patterns">Colours, gradients and patterns</a></div>
+<div><a href="/svggraph-embed.php" title="SVG in HTML">SVG in HTML</a></div>
+<div><a href="/svggraph-structured.php" title="Structured data">Structured data</a></div>
+<div><a href="/svggraph-settings.php" title="General settings">General settings</a></div>
+<div><a href="/svggraph-bar.php" title="Bar graphs">Bar graphs</a></div>
+<div><a href="/svggraph-bar3d.php" title="3D Bar graphs">3D Bar graphs</a></div>
+<div><a href="/svggraph-horizontal.php" title="Horizontal bar graphs">Horizontal bar graphs</a></div>
+<div><a href="/svggraph-line.php" title="Line graphs">Line graphs</a></div>
+<div><a href="/svggraph-scatter.php" title="Scatter graphs">Scatter graphs</a></div>
+<div><a href="/svggraph-radar.php" title="Radar graphs">Radar graphs</a></div>
+<div><a href="/svggraph-pie.php" title="Pie graphs">Pie graphs</a></div>
+<div><a href="/svggraph-misc.php" title="Other graphs">Other graphs</a></div>
+<div><a href="/svggraph-dimensions.php" title="Axis and grid options">Axis and grid options</a></div>
+<div><a href="/svggraph-axis-and-grid.php" title="Axis and grid styles">Axis and grid styles</a></div>
+<div><a href="/svggraph-dual-y-axis.php" title="Dual and multiple Y-axis graphs">Dual and multiple Y-axis graphs</a></div>
+<div><a href="/svggraph-datetime-axis.php" title="Date and time options">Date and time options</a></div>
+<div><a href="/svggraph-titles.php" title="Titles and axis labels">Titles and axis labels</a></div>
+<div><a href="/svggraph-data-labels.php" title="Data labels">Data labels</a></div>
+<div><a href="/svggraph-legends.php" title="Legends">Legends</a></div>
+<div><a href="/svggraph-markers.php" title="Markers">Markers</a></div>
+<div><a href="/svggraph-guidelines.php" title="Guide or target lines">Guide or target lines</a></div>
+<div><a href="/svggraph-shapes.php" title="Shapes and figures">Shapes and figures</a></div>
+<div><a href="/svggraph-custom-labels.php" title="Custom labels">Custom labels</a></div>
+<div><a href="/svggraph-subgraphs.php" title="Subgraphs">Subgraphs</a></div>
+<div><a href="/svggraph-bgimage.php" title="Background images and shadows">Background images and shadows</a></div>
+<div><a href="/svggraph-responsive.php" title="Responsive design">Responsive design</a></div>
+<div><a href="/svggraph-errors.php" title="Error messages">Error messages</a></div>
+<div><a href="/svggraph-options.php" title="Options index">Options index</a></div>
+</div></div>
+<div><span class=active><a href="/tagcanvas.php" title="TagCanvas">TagCanvas</a></span><div class="surround open">
+<div><a href="/tagcanvas.php#links" title="Download links">Download links</a></div>
+<div><a href="/tagcanvas-install.php" title="Install instructions">Install instructions</a></div>
+<div><a href="/tagcanvas-functions.php" title="Function reference">Function reference</a></div>
+<div><a href="/tagcanvas-examples.php" title="Example pages">Example pages</a></div>
+<div><a href="/tagcanvas-options.php" title="Options">Options</a></div>
+<div><a href="/tagcanvas-weighted.php" title="Weighted tags">Weighted tags</a></div>
+<div><a href="/tagcanvas-styling.php" title="Multiple colours and multiple fonts">Multiple colours and multiple fonts</a></div>
+<div><a href="/tagcanvas-webfonts.php" title="Using web fonts">Using web fonts</a></div>
+<div><a href="/tagcanvas-drag.php" title="Drag control">Drag control</a></div>
+<div><a href="/tagcanvas-shapes.php" title="Cloud shapes">Cloud shapes</a></div>
+<div><a href="/tagcanvas-centre.php" title="Centre callback function">Centre callback function</a></div>
+<div><a href="/tagcanvas-faq.php" title="Frequently asked questions">Frequently asked questions</a></div>
+<div><a href="/tagcanvas-history.php" title="Version history">Version history</a></div>
+</div></div>
+<div><a href="/downloads.php" title="Downloads">Downloads</a></div>
+<div><a href="/more.php" title="More...">More...</a><div class="surround">
+<div><a href="/trayblank.php" title="TrayBlank">TrayBlank</a></div>
+<div><a href="/accelerometer.php" title="Accelerometer">Accelerometer</a></div>
+<div><a href="/snow.php" title="Snow">Snow</a></div>
+<div><a href="/glowspot.php" title="Glowspot">Glowspot</a></div>
+<div><a href="/clock.php" title="March">March</a></div>
+</div></div>
+<div><a href="https://twitter.com/Goat1000" title="Twitter @Goat1000" rel="nofollow">Twitter @Goat1000</a></div>
+<div><a href="/donate.php" title="Donate!">Donate!</a></div>
+</div>
+<div id="under-menu"><div class='sharethis-inline-share-buttons'></div>
+</div>
+</div>
+</div><div id="content">
+<h1>TagCanvas - HTML5 Canvas Tag Cloud</h1>
+<p>Skip to:</p>
+<ul class="subnav">
+  <li><a href="#links">Download links</a></li>
+  <li><a href="/tagcanvas-install.php">Installation instructions</a></li>
+  <li><a href="/tagcanvas-functions.php">Function reference</a></li>
+  <li><a href="/tagcanvas-examples.php">Example pages</a></li>
+  <li><a href="/tagcanvas-options.php">Options</a></li>
+  <li><a href="/tagcanvas-weighted.php">Weighted tags</a></li>
+  <li><a href="/tagcanvas-styling.php">Multi-colour and multi-font support</a></li>
+  <li><a href="/tagcanvas-webfonts.php">Using web fonts</a></li>
+  <li><a href="/tagcanvas-drag.php">Drag control</a></li>
+  <li><a href="/tagcanvas-shapes.php">Cloud shapes</a></li>
+  <li><a href="/tagcanvas-centre.php">Centre callback function</a></li>
+  <li><a href="/tagcanvas-faq.php">Frequently asked questions</a></li>
+  <li><a href="/tagcanvas-history.php">Version history</a></li>
+</ul>
+
+<p>TagCanvas is a Javascript class which will draw and animate a HTML5
+<code>canvas</code> based tag cloud. I'm releasing it as open source
+under the LGPL v3 license. Below is an example.</p>
+
+<div class="centred" style="width: 100%; max-width: 602px">
+<div id="cparent">
+  <div id="cmsg">
+    <p>Since the canvas is part of the HTML page, you can position things above
+    or below it.</p>
+    <button onclick="this.parentNode.style.display='none';return false">Close</button>
+  </div>
+</div>
+
+<canvas id="tagcanvas" width="560" height="400" style="max-width: 560px; width: 100%">
+<img src="/images/tagcanvas.png" width=200 height=150>
+<p>If this looks like a small static image, your browser does not support the
+canvas tag. Please try again using a different browser, or try to imagine text
+swirling around in response to the mouse position.</p>
+</canvas>
+
+<div style="text-align: center">
+<button onclick="changetags('taglist')">Use text links</button>
+<button onclick="changetags('iconTags')">Use image links</button>
+<label><input type="checkbox" onclick="BGImage(this)" />Background image</label>
+</div>
+<div style="text-align: center">
+<span>Cloud shape:</span>
+<button onclick="changeshape('hcylinder')">hcylinder</button>
+<button onclick="changeshape('vcylinder')">vcylinder</button>
+<button onclick="changeshape('hring')">hring</button>
+<button onclick="changeshape('vring')">vring</button>
+<button onclick="changeshape('sphere')">sphere</button>
+</div>
+<p>You clicked on: <em id=sout style=color:#900>&hellip;nothing yet!</em></p>
+</div>
+
+<p>For the example above, I've replaced all the links with <code>onclick</code>
+handlers so that you won't end up on a different page when you click on any of
+the tags.</p>
+
+<h2>More examples</h2>
+<div style="overflow: auto">
+<canvas id="smallCanvas" width="345" height="200" style="width:100%;max-width:45%;float:left"><p>This is another canvas</p></canvas>
+<canvas id="otherCanvas" width="345" height="200" style="width:100%;max-width:45%;float:right"><p>And another canvas</p></canvas>
+</div>
+<p>Two more examples side-by-side. Clicking a tag in the first will reload the second with different content.</p>
+
+<div style="display: none">
+  <div id="taglist">
+    <ul>
+      <li><a href="#fake1" onclick="return tpu(this)">Fake link 1</a></li>
+      <li><a href="#fake2" onclick="return tpu(this)">Fake link 2</a></li>
+      <li><a href="#fake3" onclick="return tpu(this)">Fake link 3</a></li>
+      <li><a href="#fake4" onclick="return tpu(this)">Fake link 4</a></li>
+      <li><a href="#fake5" onclick="return tpu(this)">Fake link 5</a></li>
+      <li><a href="#fake6" onclick="return tpu(this)">Fake link 6</a></li>
+    </ul>
+    <ul>
+      <li><a href="#" onclick="return tpu(this)">SVGGraph</a></li>
+      <li><a href="#" onclick="return tpu(this)">JPEG Saver</a></li>
+      <li><a href="#" onclick="return tpu(this)">Downloads</a></li>
+      <li><a href="#" onclick="return tpu(this)">Google</a></li>
+      <li><a href="#" onclick="return tpu(this)">Yahoo!</a></li>
+      <li><a href="#" onclick="return tpu(this)">Microsoft</a></li>
+      <li><a href="#" onclick="return tpu(this)">BBC</a></li>
+    </ul>
+  </div>
+  <div id="moreTags">
+    <ul>
+      <li><a href="#" onclick="return f('another')">Another</a></li>
+      <li><a href="#" onclick="return f('example')">Example</a></li>
+      <li><a href="#" onclick="return f('different')">Different</a></li>
+      <li><a href="#" onclick="return f('options')">Options</a></li>
+    </ul>
+  </div>
+  <div id="another">
+    <ul>
+      <li><a href="http://www.php.net/" target="_blank">PHP</a></li>
+    </ul>
+  </div>
+  <div id="example">
+    <ul>
+      <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+    </ul>
+  </div>
+  <div id="different">
+    <ul>
+      <li><a href="https://www.w3.org/TR/2010/WD-2dcontext-20100304/" target="_blank">Canvas 2D</a></li>
+    </ul>
+  </div>
+  <div id="options">
+    <ul>
+      <li><a href="https://www.w3.org/TR/html5/" target="_blank">HTML5</a></li>
+    </ul>
+  </div>
+
+  <div id="iconTags">
+  <a href="#01" onclick="return tpu(this)"><img src="/images/64x64/icon-01.png" alt="Icon 01" /></a>
+  <a href="#02" onclick="return tpu(this)"><img src="/images/64x64/icon-02.png" alt="Icon 02" /></a>
+  <a href="#03" onclick="return tpu(this)"><img src="/images/64x64/icon-03.png" alt="Icon 03" /></a>
+  <a href="#04" onclick="return tpu(this)"><img src="/images/64x64/icon-04.png" alt="Icon 04" /></a>
+  <a href="#05" onclick="return tpu(this)"><img src="/images/64x64/icon-05.png" alt="Icon 05" /></a>
+  <a href="#06" onclick="return tpu(this)"><img src="/images/64x64/icon-06.png" alt="Icon 06" /></a>
+  <a href="#07" onclick="return tpu(this)"><img src="/images/64x64/icon-07.png" alt="Icon 07" /></a>
+  <a href="#08" onclick="return tpu(this)"><img src="/images/64x64/icon-08.png" alt="Icon 08" /></a>
+  <a href="#09" onclick="return tpu(this)"><img src="/images/64x64/icon-09.png" alt="Icon 09" /></a>
+  <a href="#10" onclick="return tpu(this)"><img src="/images/64x64/icon-10.png" alt="Icon 10" /></a>
+  <a href="#11" onclick="return tpu(this)"><img src="/images/64x64/icon-11.png" alt="Icon 11" /></a>
+  <a href="#12" onclick="return tpu(this)"><img src="/images/64x64/icon-12.png" alt="Icon 12" /></a>
+  <a href="#13" onclick="return tpu(this)"><img src="/images/64x64/icon-13.png" alt="Icon 13" /></a>
+  <a href="#14" onclick="return tpu(this)"><img src="/images/64x64/icon-14.png" alt="Icon 14" /></a>
+  <a href="#15" onclick="return tpu(this)"><img src="/images/64x64/icon-15.png" alt="Icon 15" /></a>
+  <a href="#16" onclick="return tpu(this)"><img src="/images/64x64/icon-16.png" alt="Icon 16" /></a>
+  <a href="#17" onclick="return tpu(this)"><img src="/images/64x64/icon-17.png" alt="Icon 17" /></a>
+  <a href="#18" onclick="return tpu(this)"><img src="/images/64x64/icon-18.png" alt="Icon 18" /></a>
+  <a href="#19" onclick="return tpu(this)"><img src="/images/64x64/icon-19.png" alt="Icon 19" /></a>
+  <a href="#20" onclick="return tpu(this)"><img src="/images/64x64/icon-20.png" alt="Icon 20" /></a>
+  </div>
+</div>
+
+<h2 id="links">Downloads</h2>
+<p>The TagCanvas script is available as a stand-alone version and as a jQuery
+plugin. Both are available as full source and minified versions in the table
+below.</p>
+
+<p>If your website already uses jQuery, then the jQuery plugin version is the
+one for you. If you are using a different Javascript library or none at all,
+the stand-alone version will work by itself.</p>
+
+<p>Unless you intend to modify the code of the TagCanvas script, you should
+use the minified version of the script - the minified versions are around
+30% smaller than the uncompressed versions.</p>
+
+<div class="table centred">
+<table class="options">
+  <thead>
+  <tr>
+    <th>Version</th>
+    <th>Full source</th>
+    <th>Minified</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td data-title="Type">Stand-alone version 2.9</td>
+    <td data-title="Full"><a href="/tagcanvas.js">tagcanvas.js</a></td>
+    <td data-title="Minified"><a href="/tagcanvas.min.js">tagcanvas.min.js</a></td>
+  </tr>
+  <tr>
+    <td data-title="Type">jQuery plugin version 2.9</td>
+    <td data-title="Full"><a href="/jquery.tagcanvas.js">jquery.tagcanvas.js</a></td>
+    <td data-title="Minified"><a href="/jquery.tagcanvas.min.js">jquery.tagcanvas.min.js</a></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The minified versions of the files have been compressed using the
+<a href="https://developer.yahoo.com/yui/compressor/" target="_blank">Yahoo! YUI Compressor</a>.</p>
+
+<p>Download my modified version of Explorer Canvas here: <a href="/excanvas.zip">excanvas.zip</a>.
+The original source of Explorer Canvas is on the
+<a href="https://code.google.com/p/explorercanvas/source/browse/" target="_blank">Google code site</a>.</p>
+
+</body>
+</html>
