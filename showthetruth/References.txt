@@ -13,6 +13,10 @@ glass cracking
 https://codepen.io/Birky/pen/KJFiq
 
 pic zoom 
+https://w3bits.com/css-image-hover-zoom/
+https://w3bits.com/labs/css-image-hover-zoom/
+
+https://greensock.com/forums/topic/17320-background-parallax-effect-on-mouse-move/
 
 pic nevigation hover moving
 https://codepen.io/Iketsuki/pen/pogxqxg
