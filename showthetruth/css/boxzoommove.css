@@ -1,21 +1,29 @@
-  .ex-thumbnail-zoom {
-    cursor: crosshair;
-    position: relative;
+
+  @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+
+  body {
+    background: #fff;
+    color: #000;
+    margin: 0;
+  }
+
+  .tiles {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 250px;
+    height: 100%;
   }
-  
-  .ex-thumbnail-zoom-img {
+
+  .tile {
     position: relative;
     float: left;
-    width: 100%;
+    width: 33.333%;
     height: 100%;
     overflow: hidden;
   }
-  
-  .ex-zoom-photo {
+
+  .photo {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,13 +35,20 @@
     transition: transform .5s ease-out;
   }
 
-/* Ignore */
-body { padding-top: 20px; }
-.jumbotron {
-  margin-top: 10px;
-  padding: 10px 0;
-  h1 {
-    font-size: 35px;
-    margin-bottom: 20px;
+  .txt {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 10%;
+    left: 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    cursor: default;
   }
-}
+
+  .x {
+    font-size: 32px;
+    line-height: 32px;
+  }
