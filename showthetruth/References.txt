@@ -35,3 +35,6 @@ http://jsfiddle.net/n8k326g6/1/
 
 php file reading
 https://www.w3schools.com/php/php_file.asp
+
+360 pic
+https://pchen66.github.io/Panolens/#Documentation
