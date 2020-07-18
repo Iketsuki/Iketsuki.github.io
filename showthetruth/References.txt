@@ -6,6 +6,9 @@ https://www.cssscript.com/demo/animated-sphere-tag-cloud/
 https://shaktisinghcheema.com/interactive-globe-in-background-of-website/
 https://cssanimation.rocks/spheres/
 
+https://www.script-tutorials.com/creating-photo-gallery-using-3d-sphere-gallery-fx/
+https://www.codespeedy.com/3d-photo-image-gallery-on-space-using-html5-css-js/
+
 word 3d cloud
 https://codepen.io/Iketsuki/pen/jOWeXRW?editors=1010
 
