@@ -38,3 +38,14 @@ https://www.w3schools.com/php/php_file.asp
 
 360 pic
 https://pchen66.github.io/Panolens/#Documentation
+
+css var
+https://muki.tw/tech/native-css-variables/#%E5%88%A9%E7%94%A8_JavaScript_%E8%AE%80%E5%AF%AB_CSS_%E8%AE%8A%E6%95%B8
+https://www.w3.org/TR/css-variables/#syntax
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+
+css var with java
+https://css-tricks.com/updating-a-css-variable-with-javascript/
+https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+https://stackoverflow.com/questions/41370741/how-do-i-edit-a-css-variable-using-js
