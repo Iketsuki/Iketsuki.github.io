@@ -49,3 +49,7 @@ css var with java
 https://css-tricks.com/updating-a-css-variable-with-javascript/
 https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 https://stackoverflow.com/questions/41370741/how-do-i-edit-a-css-variable-using-js
+
+offset
+https://blog.csdn.net/w390058785/article/details/80461845
+https://www.w3school.com.cn/jquery/css_offset.asp
