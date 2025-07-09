@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歐洲30日自駕婚紗旅遊完整打包清單 | Europe 30-Day Wedding Photography Road Trip Packing List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #2196f3;
+            --accent-color: #ff9800;
+            --success-color: #4caf50;
+            --warning-color: #ff5722;
+            --dark-color: #333;
+            --light-bg: rgba(255,255,255,0.95);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--dark-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container-fluid {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        @media (min-width: 1200px) {
+            .container-fluid {
+                max-width: 90%;
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trip-summary {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            width: 100%;
+        }
+        
+        .category-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-header:hover {
+            background: linear-gradient(135deg, #d81b60, #1976d2);
+        }
+        
+        .category-header h3 {
+            margin: 0;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 600;
+        }
+        
+        .collapse-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+        
+        .category-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .category-content.show {
+            max-height: none;
+            padding: 1.5rem;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+        
+        .item-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.2s ease;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        
+        .item-card:hover {
+            background: rgba(233,30,99,0.05);
+            transform: translateX(3px);
+        }
+        
+        .item-checkbox {
+            margin-top: 0.2rem;
+            transform: scale(1.2);
+            accent-color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .item-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 0 0 0.3rem 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .item-quantity {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .priority-high {
+            border-left-color: var(--warning-color);
+        }
+        
+        .priority-medium {
+            border-left-color: var(--accent-color);
+        }
+        
+        .priority-low {
+            border-left-color: var(--success-color);
+        }
+        
+        .alert-custom {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            z-index: 1000;
+        }
+        
+        .progress-bar-custom {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .floating-controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .btn-floating {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-floating:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .country-flags {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .country-flag {
+            display: inline-block;
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .country-it { background: linear-gradient(to right, #009246 33%, white 33%, white 66%, #ce2b37 66%); }
+        .country-at { background: linear-gradient(to bottom, #ed2939 33%, white 33%, white 66%, #ed2939 66%); }
+        .country-cz { background: linear-gradient(to bottom, white 50%, #d7141a 50%); }
+        .country-ch { background: #ff0000; position: relative; }
+        .country-ch::after { content: '+'; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px; }
+        .country-de { background: linear-gradient(to bottom, black 33%, #dd0000 33%, #dd0000 66%, #ffce00 66%); }
+        
+        .progress-section {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar-container {
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+            height: 30px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+        
+        @media print {
+            body { background: white; }
+            .floating-controls, .progress-container { display: none; }
+            .category-content { max-height: none !important; padding: 1.5rem !important; }
+        }
+        
+        @media (max-width: 480px) {
+            .container-fluid {
+                max-width: 98%;
+                padding: 0 10px;
+            }
+            
+            .header {
+                padding: 1.5rem 0;
+            }
+            
+            .floating-controls {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .country-flags {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .icon {
+            color: var(--primary-color);
+            margin-right: 0.3rem;
+        }
+        
+        .warning-badge {
+            background: var(--warning-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar-custom" id="scrollProgress"></div>
+    </div>
+
+    <div class="header">
+        <div class="container-fluid text-center">
+            <h1><i class="fas fa-camera me-3"></i>歐洲30日自駕婚紗旅遊完整打包清單</h1>
+            <p class="lead mb-0">Europe 30-Day Wedding Photography Road Trip Complete Packing List</p>
+            <div class="country-flags">
+                <span class="country-flag country-it"></span>
+                <span class="country-flag country-at"></span>
+                <span class="country-flag country-cz"></span>
+                <span class="country-flag country-ch"></span>
+                <span class="country-flag country-de"></span>
+                <span class="ms-2">意大利 → 奧地利 → 捷克 → 瑞士 → 德國</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- 統計概要 -->
+        <div class="trip-summary">
+            <h2 class="text-center mb-4"><i class="fas fa-chart-bar me-2"></i>旅程統計概要</h2>
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="stat-number">30</div>
+                    <div>旅行天數</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div>國家數量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalItems">0</div>
+                    <div>總打包項目</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedItems">0</div>
+                    <div>已完成項目</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 進度追蹤 -->
+        <div class="progress-section">
+            <h3 class="mb-3"><i class="fas fa-tasks me-2"></i>打包進度</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBar">0%</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <small class="text-muted">高優先級: <span id="highPriorityCount" class="text-danger fw-bold">0</span></small>
+                </div>
+                <div class="col-md-4">
+                    <small class="text-muted">中優先級: <span id="mediumPriorityCount" class="text-warning fw-bold">0</span></small>
+                </div>
+                <div class="col-md-4">
+                    <small class="text-muted">低優先級: <span id="lowPriorityCount" class="text-success fw-bold">0</span></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. 證件/文件類 -->
+        <div class="category-card">
+            <div class="category-header" data-bs-toggle="collapse" data-bs-target="#documents" aria-expanded="true">
+                <h3><i class="fas fa-passport me-2"></i>證件/文件類 Documents & Papers</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content show" id="documents">
+                <div class="alert alert-info alert-custom">
+                    <h6><i class="fas fa-info-circle me-2"></i>重要提醒</h6>
+                    <p class="mb-0">所有重要文件建議同時準備電子版和紙本，並分開存放。護照影本和緊急聯絡資訊請雲端備份。</p>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="passport">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-passport icon"></i>護照
+                                <span class="item-quantity">1本</span>
+                            </h5>
+                            <p class="item-description">有效期至少6個月以上，準備影本分開攜帶，重要頁面拍照存雲端</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="intl-license">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-id-card icon"></i>國際駕照(IDP)
+                                <span class="item-quantity">1本</span>
+                            </h5>
+                            <p class="item-description">出發前在香港運輸署申請，有效期1年，自駕必備</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="hk-license">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-id-card icon"></i>香港駕照正本
+                                <span class="item-quantity">1本</span>
+                            </h5>
+                            <p class="item-description">需與國際駕照同時攜帶，租車時必須出示</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="schengen-visa">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-stamp icon"></i>申根簽證
+                                <span class="item-quantity">如需</span>
+                            </h5>
+                            <p class="item-description">香港護照持有者可免簽90天，其他護照請確認簽證要求</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="travel-insurance">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-shield-alt icon"></i>旅遊保險單
+                                <span class="item-quantity">電子+紙本</span>
+                            </h5>
+                            <p class="item-description">包含醫療、行李、租車等綜合保險，緊急聯絡電話要記下</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="bookings">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-file-alt icon"></i>預訂確認單
+                                <span class="item-quantity">電子+紙本</span>
+                            </h5>
+                            <p class="item-description">機票、租車、住宿確認單，含地址和聯絡方式</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="photo-permits">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-camera-retro icon"></i>攝影許可申請書
+                                <span class="item-quantity">如預辦</span>
+                            </h5>
+                            <p class="item-description">梵蒂岡、各大教堂、城堡等預先申請的文件</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="equipment-list">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-list icon"></i>攝影器材清單
+                                <span class="item-quantity">1份</span>
+                            </h5>
+                            <p class="item-description">過海關備查，包含器材型號和價值</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 攝影器材 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#photography" aria-expanded="false">
+                <h3><i class="fas fa-camera me-2"></i>攝影器材 Photography Equipment</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="photography">
+                <div class="alert alert-warning alert-custom">
+                    <h6><i class="fas fa-exclamation-triangle me-2"></i>攝影限制提醒</h6>
+                    <p class="mb-2"><strong>禁止專業攝影的場所：</strong></p>
+                    <ul class="mb-0 small">
+                        <li>梵蒂岡博物館、西斯汀教堂內部</li>
+                        <li>大部分教堂內部 (聖彼得大教堂等)</li>
+                        <li>博物館內部 (烏菲茲美術館等)</li>
+                        <li>人骨教堂 (塞德萊茨) - 完全禁止拍照</li>
+                    </ul>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="main-camera">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-camera icon"></i>主相機
+                                <span class="item-quantity">1台</span>
+                            </h5>
+                            <p class="item-description">全幅或APS-C，建議高像素機型，良好低光表現</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="backup-camera">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-camera icon"></i>備用相機/無反
+                                <span class="item-quantity">1台</span>
+                            </h5>
+                            <p class="item-description">輕便型，街拍和限制場所使用</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="lens-85mm">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-eye icon"></i>85mm鏡頭
+                                <span class="item-quantity">1支</span>
+                            </h5>
+                            <p class="item-description">人像主力鏡頭，f/1.4大光圈，散景效果佳</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="lens-24-70">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-search icon"></i>24-70mm鏡頭
+                                <span class="item-quantity">1支</span>
+                            </h5>
+                            <p class="item-description">萬能變焦鏡，f/2.8，適合各種場景</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="lens-16-35">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-expand icon"></i>16-35mm廣角鏡
+                                <span class="item-quantity">1支</span>
+                            </h5>
+                            <p class="item-description">建築、風景、合照必備</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="tripod">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-video icon"></i>三腳架(輕便型)
+                                <span class="item-quantity">1個</span>
+                                <span class="warning-badge">⚠️ 限戶外</span>
+                            </h5>
+                            <p class="item-description">碳纖維輕量化，多數景點內部禁用，僅限戶外</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="reflector">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-sun icon"></i>折疊反光板
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">5合1款式，補光用，便於攜帶</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="memory-cards">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-sd-card icon"></i>記憶卡
+                                <span class="item-quantity">3-4張</span>
+                            </h5>
+                            <p class="item-description">64GB以上高速卡，建議分散存放</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="camera-batteries">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-battery-three-quarters icon"></i>相機電池
+                                <span class="item-quantity">3-4顆/台</span>
+                            </h5>
+                            <p class="item-description">每台相機至少3-4顆，歐洲天氣耗電較快</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="camera-charger">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-charging-station icon"></i>相機充電器、數據線
+                                <span class="item-quantity">各1套</span>
+                            </h5>
+                            <p class="item-description">原廠充電器和USB數據線</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="cleaning-kit">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-broom icon"></i>清潔組、防水包
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">鏡頭紙、清潔液、氣吹、防水包</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="camera-bag">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-backpack icon"></i>小型相機背包
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">日常攜帶，防水防震，分格收納</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 婚紗與配件 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#wedding-attire" aria-expanded="false">
+                <h3><i class="fas fa-heart me-2"></i>婚紗與配件 Wedding Attire & Accessories</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="wedding-attire">
+                <div class="alert alert-info alert-custom">
+                    <h6><i class="fas fa-info-circle me-2"></i>婚紗搭配建議</h6>
+                    <p class="mb-0">考慮歐洲石板路面和天氣變化，選擇舒適鞋跟和多層次搭配。準備便攜式整理工具。</p>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="main-dress">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-female icon"></i>主婚紗
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">經典白色，適合教堂、城堡等正式場景</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="light-dress">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-female icon"></i>輕婚紗
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">輕便款式，適合街拍、威尼斯等場景</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="formal-suit">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-male icon"></i>正式西裝
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">深色(黑/深藍)，配白襯衫和領帶</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="shirts">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-tshirt icon"></i>襯衫
+                                <span class="item-quantity">3-4件</span>
+                            </h5>
+                            <p class="item-description">白色、淺藍色、條紋等不同款式</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="bride-heels">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-shoe-prints icon"></i>新娘高跟鞋
+                                <span class="item-quantity">1雙</span>
+                            </h5>
+                            <p class="item-description">舒適款，考慮石板路面，建議中跟或粗跟</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="groom-shoes">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-shoe-prints icon"></i>新郎皮鞋
+                                <span class="item-quantity">1雙</span>
+                            </h5>
+                            <p class="item-description">黑色牛津鞋或布洛克鞋</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="white-shoes">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-running icon"></i>輕便白鞋
+                                <span class="item-quantity">各1雙</span>
+                            </h5>
+                            <p class="item-description">舒適步行鞋，長時間觀光使用</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="accessories">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-gem icon"></i>配件組合
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">袖扣、領帶、腰帶、隱形內衣、黏貼胸貼、絲襪、頭紗發飾</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="makeup-kit">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-palette icon"></i>簡易補妝包
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">隨身攜帶，拍攝間隙補妝用</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="garment-care">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-tshirt icon"></i>衣物整理工具
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">防塵袋、摺疊衣架、便攜掛燙器、壓縮袋、洗衣袋</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. 車用與自駕必備 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#driving" aria-expanded="false">
+                <h3><i class="fas fa-car me-2"></i>車用與自駕必備 Driving Essentials</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="driving">
+                <div class="alert alert-danger alert-custom">
+                    <h6><i class="fas fa-exclamation-triangle me-2"></i>自駕重要提醒</h6>
+                    <ul class="mb-0 small">
+                        <li><strong>高速公路費用：</strong>需購買各國Vignette貼紙</li>
+                        <li><strong>ZTL限行區：</strong>意大利城市中心禁止外來車輛</li>
+                        <li><strong>停車費用：</strong>歐洲城市停車昂貴，準備零錢</li>
+                    </ul>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="vignette">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-ticket-alt icon"></i>Vignette貼紙、零錢
+                                <span class="item-quantity">各國份量</span>
+                            </h5>
+                            <p class="item-description">奧地利€9.6/10天、瑞士CHF40/年、捷克等，準備過路費零錢</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="maps">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-map icon"></i>離線地圖/紙本地圖
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">Google Maps離線下載、Waze、紙本備用地圖</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="phone-mount">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-mobile-alt icon"></i>手機車架
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">安全導航，避免分心駕駛</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="car-charger">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-car-battery icon"></i>車用充電器
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">支援快充，長途駕駛時充電</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="emergency-kit">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-tools icon"></i>緊急用品
+                                <span class="item-quantity">1套</span>
+                            </h5>
+                            <p class="item-description">備用燈泡、反光衣(依租車公司規定)、小型手電筒</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 電子設備 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#electronics" aria-expanded="false">
+                <h3><i class="fas fa-laptop me-2"></i>電子設備 Electronics & Communication</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="electronics">
+                <div class="items-grid">
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="smartphones">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-mobile-alt icon"></i>智能手機
+                                <span class="item-quantity">2台</span>
+                            </h5>
+                            <p class="item-description">確保電量充足，下載離線地圖和翻譯App</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="eu-sim">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-sim-card icon"></i>歐洲多國SIM卡
+                                <span class="item-quantity">20-30GB</span>
+                            </h5>
+                            <p class="item-description">涵蓋5國，建議預付型，支援熱點分享</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="charging-cables">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-usb icon"></i>充電線
+                                <span class="item-quantity">各類型</span>
+                            </h5>
+                            <p class="item-description">USB-C、Lightning、Micro-USB等</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="eu-adapters">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-plug icon"></i>插頭轉換器
+                                <span class="item-quantity">3-4個</span>
+                            </h5>
+                            <p class="item-description">Type C (歐洲標準)，建議多準備幾個</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="power-banks">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-battery-full icon"></i>行動電源
+                                <span class="item-quantity">2個</span>
+                            </h5>
+                            <p class="item-description">20000mAh以上，長時間外拍必備</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="laptop-tablet">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-laptop icon"></i>筆電/平板
+                                <span class="item-quantity">如需</span>
+                            </h5>
+                            <p class="item-description">照片備份和處理需要時攜帶</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="bluetooth-earphones">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-headphones icon"></i>藍牙耳機
+                                <span class="item-quantity">1副</span>
+                            </h5>
+                            <p class="item-description">通話、音樂、導航語音使用</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. 氣候與天氣應變 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#weather" aria-expanded="false">
+                <h3><i class="fas fa-cloud-sun me-2"></i>氣候與天氣應變 Weather & Outdoor</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="weather">
+                <div class="alert alert-info alert-custom">
+                    <h6><i class="fas fa-thermometer-half me-2"></i>歐洲夏季氣候</h6>
+                    <p class="mb-0">白天20-30°C，夜晚10-15°C，多變天氣需要洋蔥式穿搭。山區溫差更大。</p>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="down-jacket">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-jacket icon"></i>輕羽絨/防風外套
+                                <span class="item-quantity">各1件</span>
+                            </h5>
+                            <p class="item-description">應對早晚溫差和山區天氣</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="layering-clothes">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-tshirt icon"></i>洋蔥式穿搭內搭
+                                <span class="item-quantity">3-4件</span>
+                            </h5>
+                            <p class="item-description">長袖上衣、薄毛衣、開衫等</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="comfortable-shoes">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-running icon"></i>運動鞋/涼鞋
+                                <span class="item-quantity">各1雙</span>
+                            </h5>
+                            <p class="item-description">長時間步行，舒適透氣</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="rain-gear">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-umbrella icon"></i>折疊雨傘、雨衣
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">歐洲夏季多陣雨，輕便防水</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-high">
+                        <input type="checkbox" class="item-checkbox" id="sun-protection">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-sun icon"></i>防曬乳、太陽眼鏡、帽子
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">SPF30+防曬，UV400太陽眼鏡，遮陽帽</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="daypack">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-backpack icon"></i>小型摺疊背包/水壺
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">日常使用，輕便收納，保持水分</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 盥洗、藥品與健康 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#health" aria-expanded="false">
+                <h3><i class="fas fa-first-aid me-2"></i>盥洗、藥品與健康 Hygiene & Health</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="health">
+                <div class="items-grid">
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="toiletries">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-soap icon"></i>日常盥洗包
+                                <span class="item-quantity">旅行裝</span>
+                            </h5>
+                            <p class="item-description">牙刷牙膏、洗髮精、沐浴乳、洗面乳等</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="basic-medicine">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-pills icon"></i>基本藥品
+                                <span class="item-quantity">小包裝</span>
+                            </h5>
+                            <p class="item-description">腸胃藥、止痛藥、退燒藥、暈車藥、OK繃</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="masks">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-head-side-mask icon"></i>醫療口罩
+                                <span class="item-quantity">10-20個</span>
+                            </h5>
+                            <p class="item-description">部分場所可能需要，飛機上建議配戴</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="sanitizer">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-hand-sparkles icon"></i>酒精濕紙巾、乾洗手
+                                <span class="item-quantity">各2-3包</span>
+                            </h5>
+                            <p class="item-description">隨身清潔，用餐前後使用</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="feminine-products">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-female icon"></i>女性生理用品
+                                <span class="item-quantity">適量</span>
+                            </h5>
+                            <p class="item-description">衛生棉/棉條，歐洲價格較高建議多帶</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="contacts">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-eye icon"></i>隱形眼鏡與藥水/備用眼鏡
+                                <span class="item-quantity">30天份</span>
+                            </h5>
+                            <p class="item-description">日拋型較方便，備用眼鏡以防萬一</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. 日常生活與幸福感提升 -->
+        <div class="category-card">
+            <div class="category-header collapsed" data-bs-toggle="collapse" data-bs-target="#comfort" aria-expanded="false">
+                <h3><i class="fas fa-heart me-2"></i>日常生活與幸福感提升 Comfort & Well-being</h3>
+                <i class="fas fa-chevron-down collapse-icon"></i>
+            </div>
+            <div class="category-content" id="comfort">
+                <div class="items-grid">
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="sleep-kit">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-eye-slash icon"></i>晚安眼罩、耳塞
+                                <span class="item-quantity">各1套</span>
+                            </h5>
+                            <p class="item-description">改善睡眠品質，時差調整</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-medium">
+                        <input type="checkbox" class="item-checkbox" id="travel-pillow">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-bed icon"></i>輕型旅行枕
+                                <span class="item-quantity">1個</span>
+                            </h5>
+                            <p class="item-description">長途飛行和車程休息</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="thermos">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-coffee icon"></i>小型保溫杯/茶包
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">喝熱飲習慣，歐洲咖啡文化體驗</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="journal">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-book icon"></i>旅行日記/筆
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">記錄美好回憶和心得</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="snacks">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-cookie-bite icon"></i>零食/能量棒
+                                <span class="item-quantity">適量</span>
+                            </h5>
+                            <p class="item-description">長途駕駛和拍攝間隙補充體力</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="moisturizer">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-hand-holding-water icon"></i>護手霜、潤唇膏
+                                <span class="item-quantity">各1個</span>
+                            </h5>
+                            <p class="item-description">歐洲較乾燥，保持肌膚水潤</p>
+                        </div>
+                    </div>
+                    <div class="item-card priority-low">
+                        <input type="checkbox" class="item-checkbox" id="souvenirs">
+                        <div class="item-content">
+                            <h5 class="item-name">
+                                <i class="fas fa-gift icon"></i>小禮物/明信片
+                                <span class="item-quantity">適量</span>
+                            </h5>
+                            <p class="item-description">香港特色小物，與當地人交流用</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 浮動控制按鈕 -->
+    <div class="floating-controls">
+        <button class="btn-floating" onclick="expandAll()" title="展開全部">
+            <i class="fas fa-expand-alt"></i>
+        </button>
+        <button class="btn-floating" onclick="collapseAll()" title="收合全部">
+            <i class="fas fa-compress-alt"></i>
+        </button>
+        <button class="btn-floating" onclick="window.print()" title="列印清單">
+            <i class="fas fa-print"></i>
+        </button>
+        <button class="btn-floating" onclick="scrollToTop()" title="回到頂部">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 初始化變數
+        let totalItems = 0;
+        let checkedItems = 0;
+        let highPriorityItems = 0;
+        let mediumPriorityItems = 0;
+        let lowPriorityItems = 0;
+
+        // 頁面載入完成後執行
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadProgress();
+            bindEvents();
+        });
+
+        // 初始化應用
+        function initializeApp() {
+            calculateStatistics();
+            updateProgressDisplay();
+            setupCollapseHandlers();
+        }
+
+        // 計算統計數據
+        function calculateStatistics() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            totalItems = checkboxes.length;
+            checkedItems = document.querySelectorAll('.item-checkbox:checked').length;
+            
+            highPriorityItems = document.querySelectorAll('.priority-high').length;
+            mediumPriorityItems = document.querySelectorAll('.priority-medium').length;
+            lowPriorityItems = document.querySelectorAll('.priority-low').length;
+        }
+
+        // 更新進度顯示
+        function updateProgressDisplay() {
+            const progressPercentage = totalItems > 0 ? Math.round((checkedItems / totalItems) * 100) : 0;
+            
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('completedItems').textContent = checkedItems;
+            document.getElementById('progressBar').textContent = progressPercentage + '%';
+            document.getElementById('progressBar').style.width = progressPercentage + '%';
+            
+            document.getElementById('highPriorityCount').textContent = highPriorityItems;
+            document.getElementById('mediumPriorityCount').textContent = mediumPriorityItems;
+            document.getElementById('lowPriorityCount').textContent = lowPriorityItems;
+        }
+
+        // 設置折疊處理器
+        function setupCollapseHandlers() {
+            const headers = document.querySelectorAll('.category-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const target = document.querySelector(this.getAttribute('data-bs-target'));
+                    const icon = this.querySelector('.collapse-icon');
+                    
+                    if (target.classList.contains('show')) {
+                        target.classList.remove('show');
+                        this.classList.add('collapsed');
+                        icon.style.transform = 'rotate(-90deg)';
+                    } else {
+                        target.classList.add('show');
+                        this.classList.remove('collapsed');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        }
+
+        // 綁定事件
+        function bindEvents() {
+            // 複選框變更事件
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    calculateStatistics();
+                    updateProgressDisplay();
+                    saveProgress();
+                });
+            });
+
+            // 滾動事件
+            window.addEventListener('scroll', updateScrollProgress);
+        }
+
+        // 更新滾動進度
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = Math.min(scrollPercentage, 100) + '%';
+        }
+
+        // 展開全部
+        function expandAll() {
+            const contents = document.querySelectorAll('.category-content');
+            const headers = document.querySelectorAll('.category-header');
+            const icons = document.querySelectorAll('.collapse-icon');
+            
+            contents.forEach(content => content.classList.add('show'));
+            headers.forEach(header => header.classList.remove('collapsed'));
+            icons.forEach(icon => icon.style.transform = 'rotate(0deg)');
+        }
+
+        // 收合全部
+        function collapseAll() {
+            const contents = document.querySelectorAll('.category-content');
+            const headers = document.querySelectorAll('.category-header');
+            const icons = document.querySelectorAll('.collapse-icon');
+            
+            contents.forEach((content, index) => {
+                if (index > 0) { // 保持第一個展開
+                    content.classList.remove('show');
+                }
+            });
+            headers.forEach((header, index) => {
+                if (index > 0) {
+                    header.classList.add('collapsed');
+                }
+            });
+            icons.forEach((icon, index) => {
+                if (index > 0) {
+                    icon.style.transform = 'rotate(-90deg)';
+                }
+            });
+        }
+
+        // 回到頂部
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 保存進度到本地存儲
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            const checkedStates = {};
+            checkboxes.forEach(checkbox => {
+                if (checkbox.id) {
+                    checkedStates[checkbox.id] = checkbox.checked;
+                }
+            });
+            localStorage.setItem('weddingPackingProgress', JSON.stringify(checkedStates));
+        }
+
+        // 從本地存儲載入進度
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('weddingPackingProgress');
+            if (savedProgress) {
+                const checkedStates = JSON.parse(savedProgress);
+                Object.keys(checkedStates).forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = checkedStates[id];
+                    }
+                });
+                calculateStatistics();
+                updateProgressDisplay();
+            }
+        }
+
+        // 響應式字體大小調整
+        function adjustFontSize() {
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            if (vw < 480) {
+                document.body.style.fontSize = '14px';
+            } else if (vw < 768) {
+                document.body.style.fontSize = '15px';
+            } else {
+                document.body.style.fontSize = '16px';
+            }
+        }
+
+        // 視窗大小變更時調整
+        window.addEventListener('resize', adjustFontSize);
+        adjustFontSize(); // 初始調整
+    </script>
+</body>
+</html>

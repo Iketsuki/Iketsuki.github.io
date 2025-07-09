@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歐洲30日自駕婚紗旅遊 - 專屬旅程指南</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .journey-info {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .journey-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff9a56 0%, #ffad56 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .stat-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .countries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .country-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .modules-grid {
+            /* display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; */
+            margin-bottom: 30px;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .module-header {
+            padding: 20px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .module-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .module-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .module-header i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .module-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .module-content.active {
+            max-height: 100000px;
+            padding: 20px;
+        }
+
+        .module-card.active .module-header i {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* 不同模組的顏色主題 */
+        .wedding-dress { background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%); }
+        .life-tips { background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%); }
+        .driving { background: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%); }
+        .clothing-care { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .photography { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .checklist { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .emergency { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .happiness { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+        .content-section {
+            margin-bottom: 25px;
+        }
+
+        .content-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-section h4 i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .tips-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .country-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .country-info h5 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .alert-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+        }
+
+        .alert-box.danger {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+            border-left-color: #dc3545;
+        }
+
+        .alert-box.success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            border-left-color: #28a745;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .journey-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .module-header {
+                padding: 15px;
+            }
+
+            .stat-item {
+                padding: 10px;
+            }
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .module-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .module-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        /* 滾動條美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-heart"></i> 歐洲30日自駕婚紗旅遊</h1>
+            <p>專屬旅程指南 & 貼心提醒 💕</p>
+        </div>
+
+        <div class="journey-info">
+            <div class="journey-stats">
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>30</h3>
+                    <p>天數</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>5</h3>
+                    <p>國家</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-camera"></i>
+                    <h3>8</h3>
+                    <p>拍攝地點</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-car"></i>
+                    <h3>3000+</h3>
+                    <p>公里</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-bottom: 15px; color: #333;"><i class="fas fa-route"></i> 旅程路線</h3>
+            <p style="color: #666; margin-bottom: 15px;">羅馬 → 那不勒斯 → 佛羅倫斯 → 摩德納 → 威尼斯 → 維也納 → 布拉格 → 薩爾茨堡 → 慕尼黑 → 因斯布魯克 → 蘇黎世 → 策馬特 → 米蘭 → 比薩 → 羅馬</p>
+            
+            <div class="countries">
+                <span class="country-tag">🇮🇹 義大利</span>
+                <span class="country-tag">🇦🇹 奧地利</span>
+                <span class="country-tag">🇨🇿 捷克</span>
+                <span class="country-tag">🇩🇪 德國</span>
+                <span class="country-tag">🇨🇭 瑞士</span>
+            </div>
+        </div>
+
+        <div class="modules-grid">
+            <!-- 模組1: 每日婚紗穿著提醒 -->
+            <div class="module-card">
+                <div class="module-header wedding-dress" onclick="toggleModule(this)">
+                    <h3>💒 每日婚紗穿著提醒</h3>
+                    <p>攝影許可 · 換裝建議 · 最佳時段</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-calendar-check"></i> 重點拍攝日程</h4>
+                        <div class="alert-box success">
+                            <strong>主要婚紗拍攝日期：</strong><br>
+                            • 7/20-7/23：威尼斯婚紗拍攝（4天）<br>
+                            • 7/28：布拉格拍攝<br>
+                            • 7/31：哈爾施塔特拍攝<br>
+                            • 8/1：國王湖拍攝<br>
+                            • 8/6：格林德瓦拍攝<br>
+                            • 8/8：策馬特拍攝
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-camera"></i> 攝影許可重要提醒</h4>
+                        <ul class="tips-list">
+                            <li><strong>梵蒂岡博物館：</strong>專業攝影需特別許可且限制嚴格</li>
+                            <li><strong>聖彼得大教堂：</strong>內部禁止三腳架及專業攝影</li>
+                            <li><strong>聖天使堡：</strong>外部拍攝較自由，內部需申請</li>
+                            <li><strong>威尼斯：</strong>各景點攝影許可費€150-€3000+不等</li>
+                            <li><strong>新天鵝堡：</strong>必須提前數月預訂導覽門票</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-clock"></i> 最佳拍攝時段建議</h4>
+                        <div class="country-info">
+                            <h5>🌅 清晨拍攝（6:00-8:00）</h5>
+                            <p>特萊維噴泉、查理大橋、哈爾施塔特觀景點 - 避開人潮，光線柔和</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🌇 黃昏拍攝（18:00-20:00）</h5>
+                            <p>米開朗基羅廣場、策馬特村莊、國王湖 - 黃金時刻，浪漫氛圍</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-tshirt"></i> 換裝建議</h4>
+                        <ul class="tips-list">
+                            <li>威尼斯：準備輕便鞋套，避免婚紗沾濕</li>
+                            <li>哈爾施塔特：山區氣溫變化大，準備保暖外套</li>
+                            <li>策馬特：高海拔紫外線強，做好防曬</li>
+                            <li>城堡景點：注意石階較多，選擇合適鞋履</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組2: 各國生活小貼士 -->
+            <div class="module-card">
+                <div class="module-header life-tips" onclick="toggleModule(this)">
+                    <h3>🌍 各國生活小貼士</h3>
+                    <p>SIM卡 · 餐廳 · 治安 · 緊急聯絡</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-sim-card"></i> SIM卡 & 通訊</h4>
+                        <div class="country-info">
+                            <h5>🇮🇹 義大利</h5>
+                            <p><strong>推薦：</strong>Iliad（Via Cola di Rienzo, 238, 羅馬）<br>
+                            <strong>其他選擇：</strong>TIM、Vodafone、WindTre</p>
+                        </div>
+                        <div class="alert-box">
+                            <strong>歐盟漫遊政策：</strong>在義大利購買的SIM卡可在奧地利、捷克、德國正常使用，但瑞士不在歐盟內需額外付費。
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-utensils"></i> 用餐 & 超市</h4>
+                        <div class="country-info">
+                            <h5>🇮🇹 義大利</h5>
+                            <p><strong>超市：</strong>Carrefour、Coop、Esselunga<br>
+                            <strong>用餐時間：</strong>午餐13:00-15:00，晚餐20:00-22:00<br>
+                            <strong>小費：</strong>一般不必要，餐廳服務費已包含</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇦🇹 奧地利 & 🇩🇪 德國</h5>
+                            <p><strong>超市：</strong>REWE、SPAR、Lidl<br>
+                            <strong>注意：</strong>週日大部分商店關門<br>
+                            <strong>飲用水：</strong>自來水可直接飲用</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇨🇿 捷克</h5>
+                            <p><strong>超市：</strong>Tesco、Albert、Kaufland<br>
+                            <strong>貨幣：</strong>捷克克朗（CZK），多數地方可用歐元但匯率不佳</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇨🇭 瑞士</h5>
+                            <p><strong>超市：</strong>Migros、Coop<br>
+                            <strong>物價：</strong>非常昂貴，建議在德國邊境購買日用品<br>
+                            <strong>貨幣：</strong>瑞士法郎（CHF），部分地方接受歐元</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-plug"></i> 插頭 & 電壓</h4>
+                        <ul class="tips-list">
+                            <li><strong>義大利：</strong>Type C、F、L插頭，230V</li>
+                            <li><strong>奧地利/德國：</strong>Type C、F插頭，230V</li>
+                            <li><strong>捷克：</strong>Type C、E插頭，230V</li>
+                            <li><strong>瑞士：</strong>Type C、J插頭，230V（注意J型較特殊）</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-shield-alt"></i> 治安 & 安全</h4>
+                        <div class="alert-box">
+                            <strong>小偷熱點：</strong>羅馬競技場、梵蒂岡、佛羅倫斯中央車站、布拉格老城廣場、巴黎地鐵
+                        </div>
+                        <ul class="tips-list">
+                            <li>貴重物品分散放置，避免全部放在同一個包</li>
+                            <li>現金分批攜帶，大額現金存放在酒店保險箱</li>
+                            <li>拍照時注意周圍，避免單獨行動</li>
+                            <li>車內不要留任何可見物品，包括空袋子</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-phone-alt"></i> 緊急聯絡</h4>
+                        <div class="country-info">
+                            <h5>🚨 歐盟統一緊急電話：112</h5>
+                            <p>警察、消防、急救通用</p>
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>中國領事館：</strong>各國都有，建議提前查詢聯絡方式</li>
+                            <li><strong>保險公司：</strong>記住旅遊保險24小時服務電話</li>
+                            <li><strong>租車公司：</strong>Hertz/Avis緊急道路救援電話</li>
+                            <li><strong>信用卡：</strong>Visa/MasterCard遺失報案電話</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組3: 自駕關鍵提醒 -->
+            <div class="module-card">
+                <div class="module-header driving" onclick="toggleModule(this)">
+                    <h3>🚗 自駕關鍵提醒</h3>
+                    <p>道路規則 · 限行區 · Vignette · 停車</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-highway"></i> 高速公路收費 & Vignette</h4>
+                        <div class="country-info">
+                            <h5>🇮🇹 義大利</h5>
+                            <p><strong>收費方式：</strong>按距離收費（取票進入，出口付費）<br>
+                            <strong>費用：</strong>約€0.07/公里，羅馬-佛羅倫斯約€22</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇦🇹 奧地利</h5>
+                            <p><strong>Vignette：</strong>€9.6（10天）必須在進入高速前購買<br>
+                            <strong>購買地點：</strong>加油站、邊境、線上</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇨🇿 捷克</h5>
+                            <p><strong>電子Vignette：</strong>線上購買，10天€11<br>
+                            <strong>重要：</strong>購買後需等待15分鐘才生效</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇩🇪 德國</h5>
+                            <p><strong>高速公路：</strong>小客車免費<br>
+                            <strong>注意：</strong>部分路段無速度限制，建議130km/h</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>🇨🇭 瑞士</h5>
+                            <p><strong>Vignette：</strong>CHF 40（約€40），有效至隔年1月<br>
+                            <strong>購買：</strong>必須在進入瑞士高速前購買</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-ban"></i> ZTL限行區域</h4>
+                        <div class="alert-box danger">
+                            <strong>義大利ZTL區域：</strong>佛羅倫斯、羅馬、威尼斯馬埃斯特、米蘭等城市中心禁止車輛進入，違規罰款€100-500
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>佛羅倫斯：</strong>住宿需在ZTL區外或酒店提供通行許可</li>
+                            <li><strong>威尼斯：</strong>主島禁車，需停在Mestre或Tronchetto</li>
+                            <li><strong>米蘭：</strong>Area C收費區，工作日7:30-19:30需付費</li>
+                            <li><strong>策馬特：</strong>無車小鎮，必須停在Täsch轉搭火車</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-parking"></i> 停車指南</h4>
+                        <div class="country-info">
+                            <h5>義大利停車顏色規則</h5>
+                            <p><strong>白線：</strong>免費停車<br>
+                            <strong>藍線：</strong>付費停車（通常€1-2/小時）<br>
+                            <strong>黃線：</strong>居民/殘障專用，禁止停車</p>
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>羅馬：</strong>Villa Borghese、Termini站附近有停車場</li>
+                            <li><strong>佛羅倫斯：</strong>推薦Parterre停車場，€2/小時</li>
+                            <li><strong>威尼斯：</strong>Tronchetto停車場，€21/天</li>
+                            <li><strong>維也納：</strong>市中心短期停車，€2.20/小時</li>
+                            <li><strong>布拉格：</strong>老城區停車困難，推薦P+R停車轉乘</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-gas-pump"></i> 加油 & 油價</h4>
+                        <ul class="tips-list">
+                            <li><strong>義大利：</strong>€1.6-1.8/升，高速服務區較貴</li>
+                            <li><strong>奧地利：</strong>€1.4-1.6/升，OMV、Shell常見</li>
+                            <li><strong>捷克：</strong>€1.3-1.5/升，相對便宜</li>
+                            <li><strong>德國：</strong>€1.5-1.7/升，Aral、Esso品質好</li>
+                            <li><strong>瑞士：</strong>€1.6-1.9/升，最昂貴</li>
+                        </ul>
+                        <div class="alert-box">
+                            <strong>省錢技巧：</strong>避開高速服務區，選擇超市附設加油站（如Carrefour、Leclerc）
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-route"></i> 駕駛技巧</h4>
+                        <ul class="tips-list">
+                            <li><strong>山路駕駛：</strong>阿爾卑斯山區彎道多，保持安全距離</li>
+                            <li><strong>城市駕駛：</strong>古城區道路狹窄，注意單行道</li>
+                            <li><strong>高速駕駛：</strong>義大利限速130km/h，德國部分無限速</li>
+                            <li><strong>冬季準備：</strong>10月-4月需準備雪鏈或冬胎</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組4: 婚紗保存建議 -->
+            <div class="module-card">
+                <div class="module-header clothing-care" onclick="toggleModule(this)">
+                    <h3>👗 婚紗保存建議</h3>
+                    <p>摺疊技巧 · 清洗方法 · 快乾建議</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-suitcase"></i> 婚紗打包 & 運輸</h4>
+                        <ul class="tips-list">
+                            <li><strong>專用婚紗袋：</strong>使用透氣防皺的婚紗專用掛袋</li>
+                            <li><strong>摺疊技巧：</strong>胸部以上平放，裙擺分層摺疊，用薄紙分隔</li>
+                            <li><strong>車內放置：</strong>平放在後座，避免重壓和陽光直射</li>
+                            <li><strong>酒店掛放：</strong>到達後立即取出掛在浴室，利用蒸氣除皺</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-shower"></i> 清洗 & 除污</h4>
+                        <div class="alert-box">
+                            <strong>緊急除污：</strong>準備婚紗專用濕紙巾、小瓶白醋、無色透明指甲油（防勾絲）
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>輕微污漬：</strong>用濕布輕拍，不要用力擦拭</li>
+                            <li><strong>油性污漬：</strong>用嬰兒爽身粉吸收，靜置後輕拍掉</li>
+                            <li><strong>草漬泥漬：</strong>晾乾後用軟毛刷輕刷</li>
+                            <li><strong>專業清洗：</strong>在米蘭或蘇黎世找專業婚紗清洗店</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-wind"></i> 快乾 & 除皺技巧</h4>
+                        <div class="country-info">
+                            <h5>浴室蒸氣法</h5>
+                            <p>拍攝前一晚，將婚紗掛在浴室，開熱水製造蒸氣15-20分鐘</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>吹風機輔助</h5>
+                            <p>用吹風機冷風模式，距離30cm輕吹皺褶處</p>
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>緊急除皺：</strong>濕毛巾蓋在皺褶上，用手掌輕壓</li>
+                            <li><strong>快速晾乾：</strong>歐洲夏季乾燥，通風處2-3小時可乾</li>
+                            <li><strong>避免直射：</strong>陽光直射會讓白紗發黃</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-male"></i> 男士西裝建議</h4>
+                        <ul class="tips-list">
+                            <li><strong>選擇面料：</strong>羊毛混紡，抗皺性好</li>
+                            <li><strong>顏色建議：</strong>深藍、炭灰較不顯髒</li>
+                            <li><strong>備用襯衫：</strong>至少準備3件白襯衫替換</li>
+                            <li><strong>掛燙技巧：</strong>酒店通常提供掛燙服務</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-tshirt"></i> 日常穿搭建議</h4>
+                        <ul class="tips-list">
+                            <li><strong>快乾材質：</strong>優選聚酯纖維和美麗諾羊毛</li>
+                            <li><strong>顏色搭配：</strong>深色較耐髒，淺色拍照好看</li>
+                            <li><strong>洗衣安排：</strong>每週找一次自助洗衣店</li>
+                            <li><strong>內衣建議：</strong>多帶幾套，歐洲內衣尺寸差異大</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組5: 攝影器材與數據安全 -->
+            <div class="module-card">
+                <div class="module-header photography" onclick="toggleModule(this)">
+                    <h3>📷 攝影器材與數據安全</h3>
+                    <p>每日備份 · 天氣應變 · 器材保護</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-cloud-upload-alt"></i> 數據備份策略</h4>
+                        <div class="alert-box success">
+                            <strong>3-2-1備份原則：</strong>3個副本、2種不同媒體、1個異地備份
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>每日備份：</strong>拍攝結束後立即備份到行動硬碟</li>
+                            <li><strong>雲端同步：</strong>酒店WiFi上傳重點照片到Google Photos/iCloud</li>
+                            <li><strong>多卡策略：</strong>使用雙卡機身，或準備多張SD卡</li>
+                            <li><strong>異地備份：</strong>定期郵寄記憶卡回國（重要！）</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-cloud-rain"></i> 天氣應變方案</h4>
+                        <div class="country-info">
+                            <h5>🌧️ 雨天拍攝</h5>
+                            <p><strong>準備物品：</strong>透明雨傘、相機防雨套、快乾毛巾<br>
+                            <strong>拍攝建議：</strong>尋找室內景點（教堂、博物館迴廊）</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>☀️ 強光拍攝</h5>
+                            <p><strong>時間安排：</strong>避開12:00-15:00強光時段<br>
+                            <strong>器材準備：</strong>偏光鏡、遮光罩、反光板</p>
+                        </div>
+                        <div class="country-info">
+                            <h5>❄️ 高山/寒冷天氣</h5>
+                            <p><strong>電池保護：</strong>低溫下電池耗電快，準備保溫袋<br>
+                            <strong>防霧處理：</strong>室內外溫差大，讓相機緩慢適應溫度</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-camera"></i> 器材保護</h4>
+                        <ul class="tips-list">
+                            <li><strong>防震保護：</strong>相機包內加厚海綿，車上避免顛簸</li>
+                            <li><strong>防潮管理：</strong>準備乾燥劑包，特別是威尼斯等水城</li>
+                            <li><strong>清潔工具：</strong>鏡頭布、清潔液、氣吹球</li>
+                            <li><strong>盜竊防護：</strong>不用時收進車後備箱，貴重鏡頭隨身攜帶</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-ban"></i> 拍攝限制提醒</h4>
+                        <div class="alert-box danger">
+                            <strong>嚴格禁止拍攝：</strong>梵蒂岡西斯汀教堂、部分博物館內部、軍事設施
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>教堂拍攝：</strong>多數教堂內部允許拍照但禁閃光燈</li>
+                            <li><strong>博物館規定：</strong>事先查詢攝影政策，部分需額外付費</li>
+                            <li><strong>私人場所：</strong>餐廳、商店內拍攝需徵得同意</li>
+                            <li><strong>人像拍攝：</strong>歐盟隱私法嚴格，避免拍攝他人</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-battery-full"></i> 電力管理</h4>
+                        <ul class="tips-list">
+                            <li><strong>充電設備：</strong>萬用插頭轉換器、行動電源、車充</li>
+                            <li><strong>電池配置：</strong>至少3-4顆備用電池，標記使用順序</li>
+                            <li><strong>充電規劃：</strong>每晚為所有設備充電，morning check</li>
+                            <li><strong>應急方案：</strong>記住相機專賣店位置（大城市都有）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組6: 檢查清單 -->
+            <div class="module-card">
+                <div class="module-header checklist" onclick="toggleModule(this)">
+                    <h3>✅ 檢查清單</h3>
+                    <p>行前準備 · 每日檢查 · 行程重點</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-plane-departure"></i> 行前終極檢查</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="passport"> <label for="passport">護照（有效期6個月以上）</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="visa"> <label for="visa">申根簽證</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="license"> <label for="license">國際駕照 + 國內駕照</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="insurance"> <label for="insurance">旅遊保險單</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="cards"> <label for="cards">信用卡（2-3張不同銀行）</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="cash"> <label for="cash">現金（歐元€500-1000）</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="booking"> <label for="booking">酒店訂單確認單</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="rental"> <label for="rental">租車確認單</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="tickets"> <label for="tickets">景點門票（已預訂）</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="medical"> <label for="medical">常用藥品 + 處方藥</label>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-sun"></i> 每日出發檢查</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-passport"> <label for="daily-passport">護照、駕照、信用卡</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-phone"> <label for="daily-phone">手機充電100%</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-camera"> <label for="daily-camera">相機電池 + 記憶卡</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-weather"> <label for="daily-weather">查看天氣預報</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-route"> <label for="daily-route">確認路線 + 停車點</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-gas"> <label for="daily-gas">檢查油量 + 加油計畫</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-water"> <label for="daily-water">水、零食、濕紙巾</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="daily-dress"> <label for="daily-dress">婚紗/西裝（拍攝日）</label>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-bed"></i> 每晚酒店檢查</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="night-backup"> <label for="night-backup">照片備份完成</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="night-charge"> <label for="night-charge">所有設備充電</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="night-clean"> <label for="night-clean">婚紗清潔掛放</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="night-plan"> <label for="night-plan">明日行程確認</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="night-laundry"> <label for="night-laundry">衣物清洗安排</label>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-map-marked-alt"></i> 重點拍攝日額外檢查</h4>
+                        <div class="alert-box">
+                            <strong>拍攝日前一晚：</strong>確認天氣、準備備用方案、檢查攝影許可文件
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="shoot-permit"> <label for="shoot-permit">攝影許可證/付費憑證</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="shoot-makeup"> <label for="shoot-makeup">化妝品 + 補妝用品</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="shoot-shoes"> <label for="shoot-shoes">多雙鞋子（替換用）</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="shoot-weather"> <label for="shoot-weather">雨傘 + 保暖外套</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="shoot-snacks"> <label for="shoot-snacks">高熱量零食 + 水</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組7: 突發情況應對 -->
+            <div class="module-card">
+                <div class="module-header emergency" onclick="toggleModule(this)">
+                    <h3>🚨 突發情況應對</h3>
+                    <p>失竊 · 車輛故障 · 身體不適 · 拍攝受阻</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-user-shield"></i> 失竊應對</h4>
+                        <div class="alert-box danger">
+                            <strong>立即行動：</strong>護照遺失需立刻聯繫中國領事館，信用卡立即掛失
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>護照遺失：</strong>報警→領事館申請旅行證→補辦手續（需2-3天）</li>
+                            <li><strong>信用卡盜用：</strong>立即電話掛失→銀行調閱監控→申請緊急現金</li>
+                            <li><strong>行李失竊：</strong>報警取得報案回執→保險公司理賠→購買必需品</li>
+                            <li><strong>車輛盜竊：</strong>報警→租車公司報告→保險理賠→安排新車</li>
+                        </ul>
+
+                        <div class="country-info">
+                            <h5>重要電話（先存手機）</h5>
+                            <p><strong>中國領事館24小時：</strong>+39-347-xxx-xxxx（義大利）<br>
+                            <strong>信用卡掛失：</strong>Visa +1-303-967-1096 / MasterCard +1-636-722-7111<br>
+                            <strong>租車公司：</strong>Hertz +39-199-112211 / Avis +39-02-6767-4406</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-car-crash"></i> 車輛故障</h4>
+                        <ul class="tips-list">
+                            <li><strong>輪胎爆胎：</strong>打開雙閃燈→停靠路邊→放置警示牌→聯繫道路救援</li>
+                            <li><strong>引擎故障：</strong>不要強行駕駛→聯繫租車公司→等待救援或換車</li>
+                            <li><strong>電池沒電：</strong>尋求他車協助→使用跨接線→或聯繫AAA道路救援</li>
+                            <li><strong>車輛碰撞：</strong>報警→拍照存證→保險公司報案→不承認責任</li>
+                        </ul>
+
+                        <div class="alert-box">
+                            <strong>高速公路故障：</strong>立即撤離車輛到安全位置，在車後150米放置警示牌，所有人員離開車輛等在護欄外
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-heartbeat"></i> 健康問題</h4>
+                        <div class="country-info">
+                            <h5>🏥 急診就醫</h5>
+                            <p><strong>歐盟緊急電話：</strong>112（救護車、醫療急救）<br>
+                            <strong>費用：</strong>急診費用高昂，記得索取醫療收據</p>
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>腸胃不適：</strong>多喝水→清淡飲食→準備止瀉藥→嚴重時就醫</li>
+                            <li><strong>感冒發燒：</strong>休息→多喝熱水→退燒藥→戴口罩防傳染</li>
+                            <li><strong>過敏反應：</strong>立即停止接觸過敏源→服用抗過敏藥→嚴重時急診</li>
+                            <li><strong>外傷扭傷：</strong>清潔傷口→冰敷消腫→包紮固定→必要時X光</li>
+                        </ul>
+
+                        <div class="alert-box">
+                            <strong>常備藥品：</strong>感冒藥、止痛藥、腸胃藥、過敏藥、外用消炎藥、創可貼
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-camera-retro"></i> 拍攝受阻</h4>
+                        <ul class="tips-list">
+                            <li><strong>天氣惡劣：</strong>室內景點（教堂、博物館）→調整拍攝風格→延後計畫</li>
+                            <li><strong>景點關閉：</strong>查詢替代景點→外觀拍攝→購買明信片留念</li>
+                            <li><strong>人潮過多：</strong>清晨拍攝→尋找制高點→長焦鏡頭避開人群</li>
+                            <li><strong>設備故障：</strong>當地相機店維修→租借設備→使用手機備用</li>
+                        </ul>
+
+                        <div class="country-info">
+                            <h5>備用拍攝地點</h5>
+                            <p><strong>羅馬：</strong>Gianicolo Hill（替代米開朗基羅廣場）<br>
+                            <strong>佛羅倫斯：</strong>San Miniato教堂（替代主教堂）<br>
+                            <strong>威尼斯：</strong>Fondamenta delle Zattere（替代聖馬可廣場）</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-language"></i> 語言溝通</h4>
+                        <ul class="tips-list">
+                            <li><strong>翻譯APP：</strong>Google Translate（可離線使用）</li>
+                            <li><strong>求助用語：</strong>學會基本的"Help"、"Police"、"Hospital"</li>
+                            <li><strong>酒店協助：</strong>請酒店前台幫忙電話溝通</li>
+                            <li><strong>中國遊客：</strong>在熱門景點尋求同胞協助</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模組8: 提升幸福感建議 -->
+            <div class="module-card">
+                <div class="module-header happiness" onclick="toggleModule(this)">
+                    <h3>💝 提升幸福感建議</h3>
+                    <p>情緒支持 · 浪漫時刻 · 美好回憶</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <div class="content-section">
+                        <h4><i class="fas fa-heart"></i> 浪漫時刻創造</h4>
+                        <ul class="tips-list">
+                            <li><strong>日出日落：</strong>米開朗基羅廣場看佛羅倫斯日落→哈爾施塔特湖邊日出</li>
+                            <li><strong>私密晚餐：</strong>威尼斯運河邊餐廳→維也納傳統酒窖→蘇黎世湖景餐廳</li>
+                            <li><strong>驚喜安排：</strong>布拉格音樂會→薩爾茨堡莫扎特音樂→瑞士山頂纜車</li>
+                            <li><strong>購物樂趣：</strong>佛羅倫斯皮革→維也納水晶→瑞士手錶巧克力</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-spa"></i> 舒壓放鬆</h4>
+                        <div class="country-info">
+                            <h5>🛁 溫泉SPA推薦</h5>
+                            <p><strong>卡羅維瓦利：</strong>溫泉小鎮，品嚐溫泉水<br>
+                            <strong>薩爾茨堡：</strong>Felsentherme溫泉浴場<br>
+                            <strong>蘇黎世：</strong>Thermalbad & Spa Zurich</p>
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>按摩放鬆：</strong>長時間拍攝後安排按摩</li>
+                            <li><strong>泡澡舒緩：</strong>酒店浴缸加浴鹽放鬆</li>
+                            <li><strong>美食療癒：</strong>品嚐當地特色美食</li>
+                            <li><strong>音樂陪伴：</strong>車上播放喜愛的音樂</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-camera-retro"></i> 回憶收藏</h4>
+                        <ul class="tips-list">
+                            <li><strong>旅行日記：</strong>每天記錄3件印象深刻的事</li>
+                            <li><strong>明信片收集：</strong>每個城市寄一張給自己</li>
+                            <li><strong>紀念品購買：</strong>小而精緻的當地特色品</li>
+                            <li><strong>Vlog記錄：</strong>用手機錄製日常片段</li>
+                        </ul>
+
+                        <div class="alert-box success">
+                            <strong>時間膠囊：</strong>在特別的地點寫下心情，密封後一年後打開
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-users"></i> 社交互動</h4>
+                        <ul class="tips-list">
+                            <li><strong>當地體驗：</strong>參加料理課程→酒莊品酒→民俗表演</li>
+                            <li><strong>攝影交流：</strong>與其他攝影師交流技巧</li>
+                            <li><strong>語言學習：</strong>學幾句當地問候語</li>
+                            <li><strong>文化探索：</strong>參觀local市集→傳統手工藝店</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-balance-scale"></i> 心理調適</h4>
+                        <div class="alert-box">
+                            <strong>長途旅行疲憊是正常的：</strong>不要給自己太大壓力，允許偶爾的bad day
+                        </div>
+                        <ul class="tips-list">
+                            <li><strong>期望管理：</strong>天氣、交通都可能有變數，保持彈性</li>
+                            <li><strong>溝通重要：</strong>及時表達需求和感受，互相支持</li>
+                            <li><strong>休息充足：</strong>不要過度安排，留出休息時間</li>
+                            <li><strong>正向思考：</strong>專注美好時刻，小問題都是旅程的一部分</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h4><i class="fas fa-gift"></i> 小驚喜ideas</h4>
+                        <ul class="tips-list">
+                            <li><strong>早餐驚喜：</strong>偷偷訂購房間早餐或找特色咖啡店</li>
+                            <li><strong>花束禮物：</strong>在重要拍攝日準備小花束</li>
+                            <li><strong>星空觀賞：</strong>瑞士山區或奧地利湖邊看星星</li>
+                            <li><strong>情書交換：</strong>在特別的地點交換愛情小紙條</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><i class="fas fa-heart"></i> 祝願你們的歐洲婚紗之旅充滿愛與美好回憶 <i class="fas fa-heart"></i></p>
+            <p>記住：最美的風景是你們在一起的每一個瞬間 💕</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModule(header) {
+            const moduleCard = header.parentElement;
+            const content = moduleCard.querySelector('.module-content');
+            
+            // 切換active狀態
+            moduleCard.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // 如果是展開狀態，滾動到該模組
+            if (moduleCard.classList.contains('active')) {
+                setTimeout(() => {
+                    moduleCard.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 300);
+            }
+        }
+
+        // 保存檢查清單狀態到本地存儲
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // 載入保存的狀態
+            checkboxes.forEach(checkbox => {
+                const saved = localStorage.getItem(checkbox.id);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // 監聽變化並保存
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                });
+            });
+        });
+
+        // 添加入場動畫
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.module-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // 響應式導航（如果需要）
+        window.addEventListener('resize', function() {
+            // 在小屏幕上自動收起展開的模組以節省空間
+            if (window.innerWidth < 768) {
+                const activeModules = document.querySelectorAll('.module-card.active');
+                if (activeModules.length > 1) {
+                    activeModules.forEach((module, index) => {
+                        if (index > 0) {
+                            module.classList.remove('active');
+                            module.querySelector('.module-content').classList.remove('active');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
